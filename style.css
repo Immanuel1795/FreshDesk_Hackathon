@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+    background-color: #ebe1ce;
+    background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  }
+
+.remove-container{
+    display: none;
+}
+
+.logout{
+   text-align: end;
+}
+
+.login-container {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #efc5b5;
+   background-color: #5c008a;
+background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+color: white;
+ padding: 55px;
+
+  
+}
+
+.login-container h1{
+    font-family: 'Encode Sans SC', sans-serif;
+}
+
+.login{
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Encode Sans SC', sans-serif;
+}
+
+.card{
+    margin-bottom: 10px;
+    background-color: #efc5b5;
+}
+
+.text-img{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+    background: #616161;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #9bc5c3, #616161);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #9bc5c3, #616161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+p, small{
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bolder;
+  }
+
+  h4{
+    font-size: clamp(1.5rem, 1vw, 3rem); 
+    font-family: 'Encode Sans SC', sans-serif;
+}
+
+input,
+  input::placeholder, .categories select {
+    font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      width: 100%;
+      font-weight: 900;
+    
+    
+  }
+
+  .categories select{
+      margin: 5px;
+  }
+
+  .contacts-container{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .detail-form{
+      padding: 15px;
+      background-color: #efc5b5;
+  }
+
+  .detail-submit, .contact-add{
+      margin-top: 5px;
+  }
+
+  
+
+
+
+
+
+
+
+
+@media (min-width: 250px) and (max-width: 767px) {
+    
+
+    .categories select{
+        width: 100%;
+        margin: 5px;
+        padding: 5px;
+        
+     }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    .login-container h1{
+        font-size: 3rem;
+    }
+
+    .login-container{
+        width: 600px;
+       
+    }
+
+    small{
+        font-size: 1.5rem;
+        font-family: sans-serif;
+    }
+
+    .navbar{
+        font-size: 1.5rem;
+    }
+
+    .navbar button{
+        font-size: 1.2rem;
+    }
+    
+
+    input,
+input::placeholder {
+    font-size: 20px;
+    line-height: 4;
+    
+}
+
+
+
+.categories select{
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    
+ }
+
+ h4{
+    font-size: 1.9rem 
+}
+p{
+    font-size: 1.5rem;
+  }
+
+  
+
+
+    
+   
+}
+
+@media (min-width: 995px) and (max-width: 1024px) {
+    .text-img{
+        width: 100px;
+        height: 100px;
+        
+        font-size: 90px;
+        
+    
+    }
+}
+
+
+
+
+@media (max-width: 1024px) {
+    
+    
+    }
+
+    
+
+@media (max-width: 990px) {
+    
+.text-img{
+    width: 80px;
+    height: 80px;
+    
+    font-size: 70px;
+    
+
+}
+}
+
+@media (max-width: 767px) {
+
+    .text-img{
+        
+        display: none;
+    
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+

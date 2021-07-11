@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>FreshDesk</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">FreshDesk</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"  onclick="displayTickets()">Tickets</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="displayContacts()" id="click-contact">Contacts</a>
+                  </li>
+
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="displayAdd();">Add</a>
+                  </li>
+                  
+              </ul>
+
+                <button class="btn btn-outline-success ml-auto" type="submit" onclick="logout();">Logout</button>
+              
+               
+              </form>
+            </div>
+          </nav>
+    </div>
+
+    <div class="container">
+        <div class="tickets-container" id="ticket-container">
+            <div class="ticket-card" id="tickets">
+               
+            </div>
+        </div>
+
+        <div class="contacts-container" id="contact-container">
+            <table class="table table-striped table-bordered table-hover" id="contacts-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                    
+                </tbody>
+                  
+            </table>
+            
+        </div>
+
+        <div id="add-container" class="contact-add">
+            <form id="add-form">
+                <div class="form-group" >
+                    <label for="ids">ID</label>
+                    <input type="text" class="form-control" id="add-ids" required>
+                  </div>
+        
+                  <div class="form-group">
+                    <label for="add-name">Name</label>
+                    <input type="text" class="form-control" id="add-name" required>
+                  </div>
+        
+                <div class="form-group">
+                  <label for="add-email">Email address</label>
+                  <input type="email" class="form-control" id="add-email" required>
+                </div>
+                <div class="form-group">
+                  <label for="add-phone">Phone</label>
+                  <input type="text" class="form-control" id="add-phone" type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
+                </div>
+                <div class="form-group">
+                    <label for="add-mobile">Mobile</label>
+                    <input type="text" class="form-control" id="add-mobile" type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="add-twitter">Captcha</label>
+                    <input type="text" class="form-control" id="add-twitter" placeholder="Enter a random number 5 digit number or letters" required>
+                  </div>
+                <button type="submit" class="btn btn-primary contact-add">Submit</button>
+              </form>
+        </div>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content" id="contact-modal">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+
+</html>
